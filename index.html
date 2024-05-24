@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: electricblue;
+            margin: 0;
+        }
+        .login-container {
+            width: 300px;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            color: black;
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: calc(100% - 24px); /* Adjust width to fit within padding and margin */
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: electricblue;
+            color: black;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0057e7; 
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <img src="white.png" alt="" height="180" width="180">
+        <form id="login-form" action="#">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var password = document.getElementById("password").value;
+            if (password === "1234") {
+                window.location.href = "dashboard.html";
+            } else {
+                alert("Incorrect password. Hint: The password is 1234.");
+            }
+        });
+    </script>
+</body>
+</html>
